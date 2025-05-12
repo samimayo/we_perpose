@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Journey Together 🎥</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="top-nav">
+    <a href="index.html">🏠 Home</a>
+    <a href="gallery.html">📸 Gallery</a>
+    <a href="message-wall.html">💌 Love Notes</a>
+    <a href="proposal.html">💍 The Question</a>
+    <a href="forever-together.html">Forever Together</a>
+  </nav>
+
+  <h1 class="gallery-title">Our Journey Together</h1>
+
+  <section class="gallery">
+    <div class="video-card">
+      <video src="vedio/vedio1.mp4" alt="First Date Video" onclick="openLightbox(this)" controls>
+        Your browser does not support the video tag.
+      </video>
+      <p>kuch to baat ha hum mei 💖</p>
+    </div>
+    <div class="video-card">
+      <video src="vedio/202504280723.mp4" alt="Vacation Video" onclick="openLightbox(this)" controls>
+        Your browser does not support the video tag.
+      </video>
+      <p>mera ishq ae tooo 😌</p>
+    </div>
+    <div class="video-card">
+      <video src="vedio/lv_7432313956175334712_20250305165829.mp4" alt="Random Video" onclick="openLightbox(this)" controls>
+        Your browser does not support the video tag.
+      </video>
+      <p>your fvrt thing 👀</p>
+    </div>
+
+    <div class="video-card">
+        <video src="vedio/vedio 4.mp4" alt="Random Video" onclick="openLightbox(this)" controls>
+          Your browser does not support the video tag.
+        </video>
+        <p>ha mujha piyar hoaa 😭</p>
+      </div>
+      <div class="video-card">
+        <video src="vedio/202504230424.mp4" alt="Random Video" onclick="openLightbox(this)" controls>
+          Your browser does not support the video tag.
+        </video>
+        <p>your smile 😚</p>
+      </div>
+    <!-- Add more videos as needed -->
+  </section>
+
+  <!-- Lightbox Popup for Videos -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <video id="lightbox-video" src="" controls autoplay></video>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>💍 Proposal Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="proposal-page">
+
+  <!-- Navigation -->
+  <nav class="top-nav">
+    <a href="index.html">🏠 Home</a>
+    <a href="gallery.html">📸 Gallery</a>
+    <a href="message-wall.html">💌 Love Notes</a>
+    <a href="proposal.html">💍 The Question</a>
+  </nav>
+
+  <!-- Proposal Message -->
+  <div class="proposal-container">
+    <h1 id="typingText"></h1>
+    <div class="proposal-buttons">
+      <button onclick="answerYes()">💖 Yes</button>
+      <button id="noBtn" onclick="answerNo()">😢 No</button>
+
+    </div>
+  </div>
+
+  
+
+  <!-- Music -->
+  <audio id="proposalMusic" src="audio/Tum Hi Ho (From Aashiqui 2).mp3" autoplay loop></audio>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+</body>
+</html>

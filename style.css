@@ -1,0 +1,505 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to top right, #fff0f5, #ffe4e1);
+    color: #2d3436;
+    text-align: center;
+    overflow-x: hidden;
+  }
+  
+  .top-nav {
+    background-color: #fff0f5;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .top-nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #d63031;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .welcome-section {
+    margin-top: 60px;
+    padding: 20px;
+  }
+  
+  .welcome-section h1 {
+    font-size: 3rem;
+    color: #d63031;
+  }
+  
+  .welcome-section p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 24px;
+    background-color: #ff7675;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  
+  .cta-button:hover {
+    background-color: #e17055;
+  }
+  
+  /* Floating hearts animation */
+  .heart-container .heart {
+    position: fixed;
+    bottom: -50px;
+    width: 20px;
+    height: 20px;
+    background: red;
+    animation: floatUp 5s infinite ease-in;
+    clip-path: polygon(50% 0%, 61% 11%, 100% 35%, 87% 100%, 50% 75%, 13% 100%, 0% 35%, 39% 11%);
+    opacity: 0.6;
+    z-index: 0;
+  }
+  
+  .heart:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+  }
+  .heart:nth-child(2) {
+    left: 50%;
+    animation-delay: 2s;
+  }
+  .heart:nth-child(3) {
+    left: 80%;
+    animation-delay: 4s;
+  }
+  
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) scale(1.5);
+      opacity: 0;
+    }
+  }
+
+  .proposal-container {
+    margin-top: 60px;
+    padding: 40px;
+    text-align: center;
+    color: #c44569;
+  }
+  
+  .proposal-question {
+    font-size: 2.5rem;
+    margin: 30px 0;
+    color: #e84393;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  #yesButton {
+    padding: 15px 30px;
+    font-size: 1.3rem;
+    background: #fab1a0;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: background 0.3s;
+  }
+  
+  #yesButton:hover {
+    background: #ff7675;
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 5px #f8a5c2;
+    }
+    to {
+      text-shadow: 0 0 20px #f78fb3;
+    }
+  }
+  
+  /* Confetti canvas full screen */
+  #confettiCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+  }
+
+  
+  .gallery-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #d63031;
+    margin-top: 20px;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .video-card {
+    background-color: #fff0f6;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  video {
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  video:hover {
+    transform: scale(1.05);
+  }
+  
+  .video-card p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #6c5ce7;
+  }
+  
+  /* Lightbox popup */
+  .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  #lightbox-video {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 10px;
+  }
+
+  #nameInput {
+    width: 90%;
+    max-width: 500px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+  .message small {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #999;
+  }
+  .message button {
+    margin-top: 8px;
+    margin-right: 5px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .message .edit-btn {
+    background-color: #74b9ff;
+    color: white;
+  }
+  .message .delete-btn {
+    background-color: #ff6b81;
+    color: white;
+  }
+  .message-wall-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #e84393;
+    margin-top: 20px;
+  }
+  
+  .message-form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  #messageInput {
+    width: 90%;
+    max-width: 500px;
+    height: 100px;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    resize: none;
+  }
+  
+  .message-form-section button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #fab1a0;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .message-form-section button:hover {
+    background-color: #ff7675;
+  }
+  
+  .message-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    padding: 20px;
+  }
+  
+  .message-list .message {
+    background-color: #ffe6f0;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-size: 1rem;
+    color: #6c5ce7;
+  }
+    
+
+  .heart-animation {
+    position: fixed;
+    font-size: 2rem;
+    animation: floatUp 1s ease-out forwards;
+    pointer-events: none;
+  }
+  
+  @keyframes floatUp {
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-100px) scale(1.5);
+    }
+  }
+  
+
+  .proposal-page {
+    background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+    color: #fff;
+    text-align: center;
+    padding-top: 100px;
+    font-family: 'Segoe UI', sans-serif;
+    background-size: cover;
+    animation: bgPulse 10s infinite alternate;
+  }
+  
+  @keyframes bgPulse {
+    0% { background-color: #fbc2eb; }
+    100% { background-color: #a6c1ee; }
+  }
+  
+  .proposal-container {
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  #typingText {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-in;
+  }
+  
+  .proposal-buttons button {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    margin: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .proposal-buttons button:hover {
+    transform: scale(1.1);
+  }
+  
+  .proposal-buttons button:first-child {
+    background-color: #ff6b81;
+    color: white;
+  }
+  
+  .proposal-buttons button:last-child {
+    background-color: #dfe6e9;
+    color: #2d3436;
+  }
+
+  .proposal-buttons {
+    position: relative;
+  }
+  
+  #noBtn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: top 0.3s ease, left 0.3s ease;
+  }
+
+  .countdown-section {
+    margin-top: 40px;
+    color: #fff;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px #000;
+  }
+  
+  #countdown {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+  
+  #countdown span {
+    margin: 0 8px;
+    color: #ffd700;
+  }
+
+  .forever-together-page {
+    background: linear-gradient(to right, #f7c5d9, #f3e6f0);
+    color: #fff;
+    text-align: center;
+    padding-top: 50px;
+    font-family: 'Segoe UI', sans-serif;
+    background-size: cover;
+    animation: bgPulse 15s infinite alternate;
+  }
+  
+  @keyframes bgPulse {
+    0% { background-color: #f7c5d9; }
+    100% { background-color: #f3e6f0; }
+  }
+  
+  .celebration-container {
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background-color: #ff6b81;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  button:hover {
+    transform: scale(1.1);
+  }
+  
+  #loveQuote {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    font-style: italic;
+    color: #ffd700;
+  }
+/* Add fade-in effect to the entire page */
+.forever-together-page {
+    opacity: 0; /* Start with 0 opacity */
+    animation: fadeIn 2s forwards; /* Fade-in effect over 2 seconds */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Optional: Add a heart animation for extra effect */
+  @keyframes heartBeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  .celebration-container h1 {
+    animation: heartBeat 1s infinite;
+    color: #ff3366;
+  }
+
+  #heartfeltMessage {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 2s ease-out;
+  }
+  
+  #heartfeltMessage h2 {
+    font-size: 2.5rem;
+    color: #ff3366;
+  }
+  
+  #ourStory {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #ffd700;
+  }
+  
+  button {
+    background-color: #ff6b81;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  button:hover {
+    transform: scale(1.1);
+  }
+  
